@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CustomListTest
 {
-    class Testing
+    public class Testing<T>
     {
+        
     }
 }
