@@ -10,8 +10,11 @@ namespace CustomListTest
     {
         static void Main(string[] args)
         {
-            Testing<int> test = new Testing<int>();
-            test.Add(1);
+            CustomList<string> test = new CustomList<string>();
+            test.Add("hello world");
+            test.Add("bye world");
+            Console.WriteLine(test[3]);
+            Console.ReadLine();
         }
     }
 }

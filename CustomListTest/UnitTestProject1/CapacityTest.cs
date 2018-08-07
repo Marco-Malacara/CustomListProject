@@ -6,14 +6,14 @@ using CustomListTest;
 
 namespace UnitTestProject1
 {
-    [TestClass]
-    public class CapacityTest
-    {
-        [TestMethod]
-        public void TestCapacity()
-        {
-            Testing<int> list = new Testing<int>();
+    //[TestClass]
+    //public class CapacityTest
+    //{
+    //    [TestMethod]
+    //    public void TestCapacity()
+    //    {
+    //        CustomList<int> list = new CustomList<int>();
 
-        }
-    }
+    //    }
+    //}
 }

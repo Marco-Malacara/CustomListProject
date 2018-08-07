@@ -12,22 +12,18 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestCountMethod()
         {
-            Testing<int> list = new Testing<int>();
+            CustomList<int> list = new CustomList<int>() { 3 };
             list.Add(1);
-            int result = list.arr.Count();
-            int expected = 1;
+            int result = list.count;
+            int expected = 2;
             Assert.AreEqual(result, expected);
         }
 
         [TestMethod]
         public void TestCountMethodUpToFive()
         {
-            Testing<int> list = new Testing<int>();
-            for (int i = 0; i <= 5; i++)
-            {
-                list.Add(i);
-            }
-            int result = list.arr.Count();
+            CustomList<int> list = new CustomList<int>() { 5, 6, 7, 2, 8 };
+            int result = list.count;
             int expected = 5;
             Assert.AreEqual(result, expected);
         }
@@ -35,12 +31,12 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestCountMethodUpToFifty()
         {
-            Testing<int> list = new Testing<int>();
-            for (int i = 0; i <= 50; i++)
+            CustomList<int> list = new CustomList<int>();
+            for (int i = 0; i < 50; i++)
             {
                 list.Add(i);
             }
-            int result = list.arr.Count();
+            int result = list.count;
             int expected = 50;
             Assert.AreEqual(result, expected);
         }
@@ -48,12 +44,12 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestCountMethodUpToHundred()
         {
-            Testing<int> list = new Testing<int>();
-            for (int i = 0; i <= 100; i++)
+            CustomList<int> list = new CustomList<int>();
+            for (int i = 0; i < 100; i++)
             {
                 list.Add(i);
             }
-            int result = list.arr.Count();
+            int result = list.count;
             int expected = 100;
             Assert.AreEqual(result, expected);
         }
@@ -61,12 +57,12 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestCountMethodUpToTwoHundred()
         {
-            Testing<int> list = new Testing<int>();
-            for (int i = 0; i <= 200; i++)
+            CustomList<int> list = new CustomList<int>();
+            for (int i = 0; i < 200; i++)
             {
                 list.Add(i);
             }
-            int result = list.arr.Count();
+            int result = list.count;
             int expected = 200;
             Assert.AreEqual(result, expected);
         }
