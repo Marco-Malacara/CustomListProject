@@ -14,22 +14,23 @@ namespace UnitTestProject1
         public void TestRemoveFromList()
         {
             CustomList<int> list = new CustomList<int>() { 5 };
-            list.Remove();
+            list.Remove(5);
             int result = list.count;
             int expected = 0;
             Assert.AreEqual(result, expected);
         }
 
-        //[TestMethod]
-        //public void TestRemoveMultiple()
-        //{
-        //    CustomList<int> list = new CustomList<int>();
-        //    list.Add(1, 2, 3, 4, 5);
-        //    list.Remove(2, 3, 4);
-        //    int result = list.arr.Count();
-        //    int expected = 2;
-        //    Assert.AreEqual(result, expected);
-        //}
+        [TestMethod]
+        public void TestRemoveMultiple()
+        {
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4, 5 };
+            list.Remove(2);
+            list.Remove(3);
+            list.Remove(4);
+            int result = list.count;
+            int expected = 2;
+            Assert.AreEqual(result, expected);
+        }
 
         //[TestMethod]
         //public void TestRemoveAt()

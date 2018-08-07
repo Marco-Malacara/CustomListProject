@@ -10,10 +10,11 @@ namespace CustomListTest
     {
         static void Main(string[] args)
         {
-            CustomList<string> test = new CustomList<string>();
-            test.Add("hello world");
-            test.Add("bye world");
-            Console.WriteLine(test[3]);
+            CustomList<int> test = new CustomList<int>() { 1, 2, 3, 4 };
+            test.Remove(2);
+            test.Remove(3);
+            Console.WriteLine(test[1]);
+            Console.WriteLine(test[0]);
             Console.ReadLine();
         }
     }

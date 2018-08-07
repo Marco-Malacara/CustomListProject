@@ -48,15 +48,15 @@ namespace CustomListTest
 
         public int GetCount()
         {
-            int newCount = 0;
+            int updatedCount = 0;
             for (int i = 0; i <= count; i++ )
             {
-                if(i == newCount)
+                if(i == updatedCount)
                 {
-                    newCount++;
+                    updatedCount++;
                 }
             }
-            return newCount++;
+            return updatedCount++;
         }
 
         public void CheckIfIncreaseCapacity()
@@ -67,7 +67,19 @@ namespace CustomListTest
             }
         }
         
-        ///////////////////////// REMOVE METHOD START /////////////////////////////
+        ////////////////////////////////////////REMOVE METHOD START
+
+        public bool Remove(T item)
+        {
+            if (count <= capacity)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
 
         public IEnumerator<T> GetEnumerator()
