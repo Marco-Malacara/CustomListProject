@@ -5,7 +5,7 @@ using CustomListTest;
 namespace UnitTestProject1
 {
     [TestClass]
-    public class UnitTest1
+    public class AddTest
     {
         [TestMethod]
         public void TestAddIntToEmptyList()
@@ -14,12 +14,13 @@ namespace UnitTestProject1
             Testing<int> list = new Testing<int>();
             int num = 12;
             //Act
-            int result = list.Add(num);
-            int expected = list[0];
+            list.Add(num);
+            int result = list.arr[0];
+            int expected = list.arr[0];
             //Assert
             Assert.AreEqual(expected, result);
         }
-
+        [TestMethod]
         public void TestAddMultipleNum()
         {
             //Range
@@ -32,7 +33,7 @@ namespace UnitTestProject1
             //Assert
             Assert.AreEqual(expected, result);
         }
-
+        [TestMethod]
         public void TestAddLargeAmount()
         {
             //Range
@@ -55,7 +56,7 @@ namespace UnitTestProject1
             //Assert
             Assert.AreEqual(result, expected);
         }
-
+        [TestMethod]
         public void TestUpTofiftyItems()
         {
             //Range
@@ -70,7 +71,7 @@ namespace UnitTestProject1
             //Assert
             Assert.AreEqual(expected, result);
         }
-
+        [TestMethod]
         public void TestUpToHundredItems()
         {
             //Range
