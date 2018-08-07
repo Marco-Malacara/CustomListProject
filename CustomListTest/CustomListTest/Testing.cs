@@ -9,20 +9,46 @@ namespace CustomListTest
     public class Testing<T>
     {
         protected T value;
-        public T[] arr = new T[10];
+        private T[] arr;
+        public int count;
+        public int capacity;
+
         public Testing()
         {
-           
+            count = 1;
+            capacity = 4;
+            arr = new T[capacity];
         }
 
-        public T this[int i]
+        public T this[int capacity]
         {
-            get { return arr[i]; }
-            set { arr[i] = value; }
+            get { return arr[capacity]; }
+            set { arr[capacity] = value; }
         }
-        public void Add(T index)
+
+        public void Add(T item)
         {
-            
+            GetCount();
+            arr[count - 1] = item;
+            Console.WriteLine(item);
+            Console.ReadLine();
+        }
+
+        public int GetCount()
+        {
+            int newCount;
+            for (newCount = 0; newCount <= count;)
+            {
+                if(newCount == count)
+                {
+                    return count + 1;
+                }
+                else
+                {
+                    newCount++;
+                }
+            }
+            return count;
         }
     }
 }

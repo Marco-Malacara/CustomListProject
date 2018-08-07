@@ -49,6 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddTest.cs" />
+    <Compile Include="CapacityTest.cs" />
+    <Compile Include="CountTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoveTest.cs" />
   </ItemGroup>

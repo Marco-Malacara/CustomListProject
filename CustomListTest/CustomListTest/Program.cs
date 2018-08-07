@@ -10,6 +10,8 @@ namespace CustomListTest
     {
         static void Main(string[] args)
         {
+            Testing<int> test = new Testing<int>();
+            test.Add(1);
         }
     }
 }
