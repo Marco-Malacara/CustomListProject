@@ -11,11 +11,11 @@ namespace CustomListTest
         static void Main(string[] args)
         {
             CustomList<int> test = new CustomList<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            foreach(int item in test)
+            foreach (int say in test)
             {
-                Console.WriteLine(item);
-                Console.ReadLine();
+                Console.WriteLine(say);
             }
+            Console.ReadLine();
         }
     }
 }

@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 namespace CustomListTest
 {
 
-    public class CustomList<T> : IEnumerable<T>
+    public class CustomList<T> : IEnumerable
     {
         protected T item;
+        private int ignoreItem;
         public T[] arr;
         public int count;
         public int capacity;
@@ -75,12 +76,12 @@ namespace CustomListTest
         {
             if (capacity == count)
             {
-               capacity = capacity * 2;
+                capacity = capacity * 2;
             }
         }
 
         ////////////////////////////////////////REMOVE METHOD START
-        public int ignoreItem = 0;
+        
         public bool Remove(T item)
         {
             bool removedItem = false;
@@ -93,7 +94,6 @@ namespace CustomListTest
                     ignoreItem++;
                     if (arr[i].Equals(item))
                     {
-                        //ignoreItem++;
                         removedItem = true;
                         arr[i] = arr[i + ignoreItem];
                         arr = ShiftArrayDown();
@@ -131,23 +131,20 @@ namespace CustomListTest
         }
 
 
-        //public IEnumerator<T> GetEnumerator()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //IEnumerator IEnumerable.GetEnumerator()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public IEnumerator GetEnumerator()
+        {
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    yield return arr[i];
+                }
+                yield break;
+            }
+        }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            for(int i = 0; i < count; i++)
-            {
-                yield return arr[i];
-            }
-            yield return "No more items to print!";
+            throw new NotImplementedException();
         }
     }
 }
