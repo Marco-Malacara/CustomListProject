@@ -50,6 +50,7 @@ namespace CustomListTest
         public T[] ArrayValue()
         {
             T[] value = new T[capacity];
+
             for(int i = 0; i < count; i++)
             {
                 value[i] = arr[i];
@@ -79,48 +80,54 @@ namespace CustomListTest
         }
 
         ////////////////////////////////////////REMOVE METHOD START
-        
+        public int ignoreItem = 0;
         public bool Remove(T item)
         {
             bool removedItem = false;
+            
 
             if (count <= capacity)
             {
                 for (int i = 0; i < count; i++)
                 {
-                    
-                    int ignoreItem = 0;
+                    ignoreItem++;
                     if (arr[i].Equals(item))
                     {
-                        ignoreItem++;
+                        //ignoreItem++;
                         removedItem = true;
-                        arr[i] = arr[i - ignoreItem];
-                    }
-
-                    if (removedItem == true)
-                    {
-                        count = CountDown();
+                        arr[i] = arr[i + ignoreItem];
+                        arr = ShiftArrayDown();
                     }
                 }
+                ignoreItem = 0;
+                count--;
             }
             else
-            {
+            { 
                 
             }
             return removedItem;
         }
 
-        public int CountDown()
+        public T[] ShiftArrayDown()
         {
-            int countDown = 0;
-            for (int i = 0; i <= count; i++)
+            T[] shiftArray = new T[capacity];
+
+            for (int i = 0; i < count; i++)
             {
-                if (i == countDown)
+
+                if(i == ignoreItem - 1 || i > ignoreItem - 1)
                 {
-                    countDown--;
+                    shiftArray[i] = arr[i + 1];
+                }
+                
+
+                else
+                {
+                    shiftArray[i] = arr[i];
                 }
             }
-            return countDown--;
+            return shiftArray;
         }
 
 

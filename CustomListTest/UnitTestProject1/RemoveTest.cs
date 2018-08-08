@@ -43,7 +43,7 @@ namespace UnitTestProject1
             CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4, 5 };
             list.Remove(3);
             int result = list.count;
-            int expected = 4;
+            int expected = list.arr[2] = 4;
             Assert.AreEqual(result, expected);
         }
 
@@ -51,13 +51,16 @@ namespace UnitTestProject1
         public void TestRemoveFifty()
         {
             CustomList<int> list = new CustomList<int>();
-            for (int i = 0; i <= 51; i++)
+            for (int i = 0; i <= 50; i++)
             {
                 list.Add(i);
             }
             for (int i = 0; i <= 50; i++)
             {
-                list.Remove(i);
+                if (i >= 1)
+                {
+                    list.Remove(i);
+                }
             }
             int result = list.count;
             int expected = 1;
@@ -68,11 +71,11 @@ namespace UnitTestProject1
         public void TestRemoveHundred()
         {
             CustomList<int> list = new CustomList<int>();
-            for (int i = 0; i <= 101; i++)
+            for (int i = 0; i <= 100; i++)
             {
                 list.Add(i);
             }
-            for (int i = 0; i <= 100; i++)
+            for (int i = 1; i <= 100; i++)
             {
                 list.Remove(i);
             }
