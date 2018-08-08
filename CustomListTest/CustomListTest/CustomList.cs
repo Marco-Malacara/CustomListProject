@@ -131,14 +131,23 @@ namespace CustomListTest
         }
 
 
-        public IEnumerator<T> GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
+        //public IEnumerator<T> GetEnumerator()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //IEnumerator IEnumerable.GetEnumerator()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            for(int i = 0; i < count; i++)
+            {
+                yield return arr[i];
+            }
+            yield return "No more items to print!";
         }
     }
 }

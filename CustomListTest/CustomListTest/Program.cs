@@ -10,15 +10,12 @@ namespace CustomListTest
     {
         static void Main(string[] args)
         {
-            CustomList<int> test = new CustomList<int>();
-            test.Add(5);
-            test.Add(1);
-            test.Add(6);
-            test.Add(2);
-            test.Add(5);
-            Console.WriteLine(test[0]);
-            Console.WriteLine(test[1]);
-            Console.ReadLine();
+            CustomList<int> test = new CustomList<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            foreach(int item in test)
+            {
+                Console.WriteLine(item);
+                Console.ReadLine();
+            }
         }
     }
 }
