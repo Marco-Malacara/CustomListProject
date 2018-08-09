@@ -41,6 +41,29 @@ namespace CustomListTest
         public static CustomList<T> operator -(CustomList<T> itemOne, CustomList<T> itemTwo)
         {
             CustomList<T> newList = new CustomList<T>();
+            for(int i = 0; i < itemOne.count; i++)
+            {
+                if (itemOne[i].Equals(itemTwo[i]))
+                {
+                    newList.Remove(itemOne[i]);
+                }
+                else
+                {
+                    newList.Add(itemOne[i]);
+                }
+            }
+            for (int i = 0; i < itemTwo.count; i++)
+            {
+                if (itemTwo[i].Equals(itemOne[i]))
+                {
+                    newList.Remove(itemTwo[i]);
+                }
+                else
+                {
+                    newList.Add(itemTwo[i]);
+                }
+            }
+
             return newList;
         }
 

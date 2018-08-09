@@ -11,10 +11,11 @@ namespace CustomListTest
         static void Main(string[] args)
         {
             CustomList<int> here = new CustomList<int>();
-            CustomList<int> test = new CustomList<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            CustomList<int> testTwo = new CustomList<int> { 6, 8, 7, 4, 6 };
+            CustomList<int> test = new CustomList<int>() { 1, 2, 3, 4, 5, };
+            CustomList<int> testTwo = new CustomList<int> { 5, 2, 7, 4, 6 };
 
-            here = (test + testTwo);
+            here = (test - testTwo);
+
 
             foreach (int say in here)
             {
