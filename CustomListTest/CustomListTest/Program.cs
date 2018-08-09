@@ -12,9 +12,9 @@ namespace CustomListTest
         {
             CustomList<int> here = new CustomList<int>();
             CustomList<int> test = new CustomList<int> { 2, 3, 5, 4};
-            CustomList<int> testTwo = new CustomList<int> { 1, 4, 3, 5 }; 
+            CustomList<int> testTwo = new CustomList<int> { 1, 4, 3, 5 };
 
-            here = (test - testTwo);
+            here.Zip(test, testTwo);
 
 
             foreach (int say in here)
