@@ -55,6 +55,7 @@
     <Compile Include="CountTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoveTest.cs" />
+    <Compile Include="-Override.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

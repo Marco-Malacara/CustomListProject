@@ -11,8 +11,8 @@ namespace CustomListTest
         static void Main(string[] args)
         {
             CustomList<int> here = new CustomList<int>();
-            CustomList<int> test = new CustomList<int>() { 1, 2, 3, 4, 5, };
-            CustomList<int> testTwo = new CustomList<int> { 5, 2, 7, 4, 6 };
+            CustomList<int> test = new CustomList<int> { 1, 2, 4, 5, 6 };
+            CustomList<int> testTwo = new CustomList<int> { 1, 4, 5 }; 
 
             here = (test - testTwo);
 
