@@ -24,6 +24,26 @@ namespace CustomListTest
             arr = new T[capacity];
         }
 
+        public static CustomList<T> operator +(CustomList<T> itemOne, CustomList<T> itemTwo)
+        {
+            CustomList<T> newList = new CustomList<T>();
+            for (int i = 0; i < itemOne.count; i++)
+            {
+                newList.Add(itemOne[i]);
+            }
+            for (int i = 0; i < itemTwo.count; i++)
+            {
+                newList.Add(itemTwo[i]);
+            }
+            return newList;
+        }
+
+        public static CustomList<T> operator -(CustomList<T> itemOne, CustomList<T> itemTwo)
+        {
+            CustomList<T> newList = new CustomList<T>();
+            return newList;
+        }
+
         public T this[int capacity]
         {
             get
@@ -140,11 +160,6 @@ namespace CustomListTest
                 }
                 yield break;
             }
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
         }
     }
 }

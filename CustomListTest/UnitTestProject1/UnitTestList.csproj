@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="+Override.cs" />
     <Compile Include="AddTest.cs" />
     <Compile Include="ArrayTempararyValueTest.cs" />
     <Compile Include="Capacity.cs" />
