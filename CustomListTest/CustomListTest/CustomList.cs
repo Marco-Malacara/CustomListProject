@@ -24,34 +24,33 @@ namespace CustomListTest
             arr = new T[capacity];
         }
 
-        public static CustomList<T> operator +(CustomList<T> itemOne, CustomList<T> itemTwo)
+        public static CustomList<T> operator +(CustomList<T> listOne, CustomList<T> listTwo)
         {
             CustomList<T> newList = new CustomList<T>();
-            for (int i = 0; i < itemOne.count; i++)
+            for (int i = 0; i < listOne.count; i++)
             {
-                newList.Add(itemOne[i]);
+                newList.Add(listOne[i]);
             }
-            for (int i = 0; i < itemTwo.count; i++)
+            for (int i = 0; i < listTwo.count; i++)
             {
-                newList.Add(itemTwo[i]);
+                newList.Add(listTwo[i]);
             }
             return newList;
         }
 
-        public static CustomList<T> operator -(CustomList<T> itemOne, CustomList<T> itemTwo)
+        public static CustomList<T> operator -(CustomList<T> listOne, CustomList<T> listTwo)
         {
             CustomList<T> newList = new CustomList<T>();
-            for (int i = 0; i < itemOne.count; i++)
+            for (int i = 0; i < listOne.count; i++)
             {
-                if (itemOne[i].Equals(itemTwo[i]))
+                for (int j = 0; j < listTwo.count; j++)
                 {
-                    itemOne.Remove(itemOne[i]);
-                    i--;
+                    if (listOne[i].Equals(listTwo[j]))
+                    {
+                        listOne.Remove(listOne[i]);
+                    }
                 }
-                else
-                {
-                    newList.Add(itemOne[i]);
-                }
+                newList.Add(listOne[i]);
             }
             return newList;
         }
@@ -157,6 +156,11 @@ namespace CustomListTest
                 }
             }
             return shiftArray;
+        }
+
+        public void Zip(CustomList<T> listOne, CustomList<T> listTwo)
+        {
+
         }
 
 
