@@ -160,7 +160,29 @@ namespace CustomListTest
 
         public void Zip(CustomList<T> listOne, CustomList<T> listTwo)
         {
+            CustomList<T> newList = new CustomList<T>();
+            int largestCount = listOne.count > listTwo.count ? listOne.count : listTwo.count;
 
+            for (int i = 0; i < largestCount; i++)
+            {
+                if (i < listOne.count && i < listTwo.count)
+                {
+                    newList.Add(listOne[i]);
+                    newList.Add(listTwo[i]);
+                }
+                else if (i > listOne.count)
+                {
+                    newList.Add(listTwo[i]);
+                }
+                else if (i > listTwo.count)
+                {
+                    newList.Add(listOne[i]);
+                }
+                else
+                {
+                    break;
+                }
+            }
         }
 
 
