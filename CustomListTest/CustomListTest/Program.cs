@@ -14,8 +14,9 @@ namespace CustomListTest
             CustomList<int> listTwo = new CustomList<int> { 1, 8, 9, 5, 7, 8 };
             CustomList<int> newList = new CustomList<int>();
 
-            newList = (listOne - listTwo);
-
+            listOne.ToString();
+            Console.WriteLine(listOne);
+            Console.ReadLine();
 
             foreach (int item in newList)
             {
