@@ -10,15 +10,14 @@ namespace CustomListTest
     {
         static void Main(string[] args)
         {
-            CustomList<int> listOne = new CustomList<int> { 1, 3, 4, 5, 7, 6 };
-            CustomList<int> listTwo = new CustomList<int> { 1, 8, 9, 5, 7, 8 };
-            CustomList<int> newList = new CustomList<int>();
+            CustomList<string> listOne = new CustomList<string> { "Aly", "Trent", "Mike", "OtherMike" };
+            CustomList<string> listTwo = new CustomList<string> { "Aly", "Trenten", "Mike", "OtherMike" };
+            CustomList<string> newList = new CustomList<string>();
 
-            listOne.ToString();
-            Console.WriteLine(listOne);
-            Console.ReadLine();
+            //Act
+            newList = (listOne - listTwo);
 
-            foreach (int item in newList)
+            foreach (string item in newList)
             {
                 Console.WriteLine(item);
             }

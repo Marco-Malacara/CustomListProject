@@ -125,6 +125,7 @@ namespace CustomListTest
                         removedItem = true;
                         arr[i] = arr[i + ignoreItem];
                         arr = ShiftArrayDown();
+                        break;
                     }
                 }
                 ignoreItem = 0;

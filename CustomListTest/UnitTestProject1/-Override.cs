@@ -11,17 +11,50 @@ namespace UnitTestProject1
     {
 
         [TestMethod]
-        public void TestSmallNumberList()
+        public void TestNumberList()
         {
             //Range
-            CustomList<int> listOne = new CustomList<int> { 1, 2 };
-            CustomList<int> listTwo = new CustomList<int> { 1, 5 };
-            CustomList<int> combinedList = new CustomList<int>();
+            CustomList<int> listOne = new CustomList<int> { 1, 3, 4, 5, 7, 6 };
+            CustomList<int> listTwo = new CustomList<int> { 1, 3, 4, 5, 7, 8 };
+            CustomList<int> newList = new CustomList<int>();
 
             //Act
-            combinedList = (listOne - listTwo);
-            int result = combinedList.count;
-            int expected = 2;
+            newList = (listOne - listTwo);
+            int result = newList.count;
+            int expected = 1;
+
+            //Assert
+            Assert.AreEqual(result, expected);
+        }
+
+        [TestMethod]
+        public void TestNumberListOutOfOrder()
+        {
+            //Range
+            CustomList<int> listOne = new CustomList<int> { 1, 3, 4, 5, 7, 6 };
+            CustomList<int> listTwo = new CustomList<int> { 1, 8, 9, 5, 7, 8 };
+            CustomList<int> newList = new CustomList<int>();
+
+            //Act
+            newList = (listOne - listTwo);
+            int result = newList.count;
+            int expected = 3;
+
+            //Assert
+            Assert.AreEqual(result, expected);
+        }
+
+        [TestMethod]
+        public void TestStringList()
+        {
+            CustomList<string> listOne = new CustomList<string> { "Marco", "Aly", "Trent", "Mike", "OtherMike" };
+            CustomList<string> listTwo = new CustomList<string> { "Marco", "Aly", "Trenten", "Mike", "OtherMike" };
+            CustomList<string> newList = new CustomList<string>();
+
+            //Act
+            newList = (listOne - listTwo);
+            int result = newList.count;
+            int expected = 1;
 
             //Assert
             Assert.AreEqual(result, expected);
