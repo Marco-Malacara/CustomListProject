@@ -92,7 +92,7 @@ namespace CustomListTest
         public int GetCount()
         {
             int updatedCount = 0;
-            for (int i = 0; i <= count; i++ )
+            for (int i = 0; i < count; i++ )
             {
                 if(i == updatedCount)
                 {

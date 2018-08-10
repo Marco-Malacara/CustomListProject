@@ -1,0 +1,92 @@
+﻿CustomList<T> Operator -
+
+
+Takes two list (a & b) and removes any recurring items from list b out of list A and returns a new CustomList<T>.
+
+
+Syntax:
+
+
+Customlist<T> newList = CustomList<T> listOne - Customlist<T> listTwo;
+
+
+Parameters:
+
+
+listOne
+Type: CustomList<T>
+Parameter: The object that will get checked for recurring list items as listTwo. If a recurring item is found, the newList will not contain that item.
+
+
+listTwo
+Type: CustomList<T>
+Parameter: The object that listOnes items check if there are recurring list items between the list. If a recurring item is found the newList will not contain that item.
+
+
+Return Value:
+
+
+newList
+Type: CustomList<T>
+Return: newList is equal to listOne minus any same items contained in listTwo. If there are no items in listOne new list will return an empty list. If listTwo is empty or has no recurring items with listOne newList will return listOne.
+
+
+Remarks:
+
+
+Both CustomList<T> being affected by the (-) operator must be the same type of T. (Exp. int - int)
+
+
+Examples:
+Below is Visual Studio code that will show how to implement the (-) operator with CustomList<T>.
+
+
+ public class CustomList<T> : IEnumerable
+    {
+        public static CustomList<T> operator -(CustomList<T> listOne, CustomList<T> listTwo)
+        {
+            CustomList<T> newList = new CustomList<T>();
+            for (int i = 0; i < listOne.count; i++)
+            {
+                for (int j = 0; j < listTwo.count; j++)
+                {
+                    if (listOne[i].Equals(listTwo[j]))
+                    {
+                        listOne.Remove(listOne[i]);
+                    }
+                }
+                newList.Add(listOne[i]);
+            }
+            return newList;
+        }
+    }
+
+
+class Example
+    {
+        public static void ExampleOfOperator()
+        {
+            // Create CustomList<T> listOne to hold items to get checked.
+            CustomList<int> listOne = new CustomList<int> { 1, 3, 4, 5, 7, 6 };
+
+
+            //Create CustomList<T> listTwo to hold items that will check listOne for same items.
+            CustomList<int> listTwo = new CustomList<int> { 1, 8, 9, 5, 7, 8 };
+
+
+            //Create CustomList<T> newList to hold the returned value of listOne - listTwo. Returned values will be { 3, 4 };
+            CustomList<int> newList = new CustomList<int>();
+
+
+            //Declare equation to remove recurring items from listOne.
+            newList = (listOne - listTwo);
+
+
+            //Write newList to console via iteration.
+            foreach (int item in newList)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadLine();
+        }
+    }

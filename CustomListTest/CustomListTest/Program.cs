@@ -11,10 +11,10 @@ namespace CustomListTest
         static void Main(string[] args)
         {
             // Create CustomList<T> listOne to hold items to get checked.
-            CustomList<int> listOne = new CustomList<int> { 1, 3, 4, 5 };
+            CustomList<int> listOne = new CustomList<int> { 1, 3, 4, 5, 7, 6 };
 
             //Create CustomList<T> listTwo to hold items that will check listOne for same items.
-            CustomList<int> listTwo = new CustomList<int> { 1, 8, 9, 5 };
+            CustomList<int> listTwo = new CustomList<int> { 1, 8, 9, 5, 7, 8 };
 
             //Create CustomList<T> newList to hold the returned value of listOne - listTwo. Returned values will be { 3, 4 };
             CustomList<int> newList = new CustomList<int>();
