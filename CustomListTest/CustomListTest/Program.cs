@@ -10,8 +10,8 @@ namespace CustomListTest
     {
         static void Main(string[] args)
         {
-            CustomList<string> listOne = new CustomList<string> { "Aly", "Trent", "Mike", "OtherMike" };
-            CustomList<string> listTwo = new CustomList<string> { "Aly", "Trenten", "Mike", "OtherMike" };
+            CustomList<string> listOne = new CustomList<string> { "Marco", "Aly", "Trent", "Mike", "OtherMike" };
+            CustomList<string> listTwo = new CustomList<string> { "Marco", "Aly", "Trenten", "Mike", "OtherMike" };
             CustomList<string> newList = new CustomList<string>();
 
             //Act

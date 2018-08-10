@@ -129,7 +129,7 @@ namespace CustomListTest
                     }
                 }
                 ignoreItem = 0;
-                count--;
+                //count--;
             }
             else
             {
@@ -141,7 +141,7 @@ namespace CustomListTest
         public T[] ShiftArrayDown()
         {
             T[] shiftArray = new T[capacity];
-
+            count--;
             for (int i = 0; i < count; i++)
             {
 
@@ -156,6 +156,7 @@ namespace CustomListTest
                     shiftArray[i] = arr[i];
                 }
             }
+            count--;
             return shiftArray;
         }
 

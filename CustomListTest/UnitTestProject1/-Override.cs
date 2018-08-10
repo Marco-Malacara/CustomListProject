@@ -47,7 +47,25 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestStringList()
         {
+            //Range
             CustomList<string> listOne = new CustomList<string> { "Marco", "Aly", "Trent", "Mike", "OtherMike" };
+            CustomList<string> listTwo = new CustomList<string> { "Marco", "Aly", "Trenten", "Mike", "OtherMike" };
+            CustomList<string> newList = new CustomList<string>();
+
+            //Act
+            newList = (listOne - listTwo);
+            int result = newList.count;
+            int expected = 1;
+
+            //Assert
+            Assert.AreEqual(result, expected);
+        }
+
+        [TestMethod]
+        public void TestStringListOutOfOrder()
+        {
+            //Range
+            CustomList<string> listOne = new CustomList<string> { "Aly", "Mike", "Marco", "Trent", "OtherMike" };
             CustomList<string> listTwo = new CustomList<string> { "Marco", "Aly", "Trenten", "Mike", "OtherMike" };
             CustomList<string> newList = new CustomList<string>();
 
