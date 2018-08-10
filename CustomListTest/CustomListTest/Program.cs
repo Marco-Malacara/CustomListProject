@@ -10,18 +10,24 @@ namespace CustomListTest
     {
         static void Main(string[] args)
         {
-            CustomList<int> here = new CustomList<int>();
-            CustomList<int> test = new CustomList<int> { 2, 3, 5, 4};
-            CustomList<int> testTwo = new CustomList<int> { 1, 4, 3, 5 };
+            // Create CustomList<T> listOne to hold items to get checked.
+            CustomList<int> listOne = new CustomList<int> { 1, 3, 4, 5 };
 
-            here.Zip(test, testTwo);
+            //Create CustomList<T> listTwo to hold items that will check listOne for same items.
+            CustomList<int> listTwo = new CustomList<int> { 1, 8, 9, 5 };
 
+            //Create CustomList<T> newList to hold the returned value of listOne - listTwo. Returned values will be { 3, 4 };
+            CustomList<int> newList = new CustomList<int>();
 
-            foreach (int say in here)
+            //Declare equation to remove recurring items from listOne.
+            newList = (listOne - listTwo);
+
+            //Write newList to console.
+            foreach (int item in newList)
             {
-                Console.WriteLine(say);
+                Console.WriteLine(item);
             }
             Console.ReadLine();
-        }
+            }
     }
 }
