@@ -131,8 +131,8 @@ namespace CustomListTest
                 count--;
             }
             else
-            { 
-                
+            {
+                throw new System.ArgumentException("The item you entered isn't on the list.");
             }
             return removedItem;
         }
