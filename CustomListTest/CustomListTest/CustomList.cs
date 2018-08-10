@@ -92,7 +92,7 @@ namespace CustomListTest
         public int GetCount()
         {
             int updatedCount = 0;
-            for (int i = 0; i < count; i++ )
+            for (int i = 0; i <= count; i++ )
             {
                 if(i == updatedCount)
                 {
@@ -182,6 +182,16 @@ namespace CustomListTest
                     break;
                 }
             }
+        }
+
+        public override string ToString()
+        {
+            string customListToString = "";
+            for (int i = 0; i < count; i++)
+            {
+                customListToString += $"{arr[i]}";
+            }
+            return customListToString;
         }
 
 
